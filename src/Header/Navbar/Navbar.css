@@ -1,0 +1,26 @@
+.navbar__list {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-item__link {
+	color: white;
+	text-decoration: none;
+	font-size: 27px;
+	font-weight: 200;
+	margin-right: 20px;
+	transition: 0.3s;
+}
+
+.navbar-item__link.disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.navbar-item__link.disabled:hover{
+	color: white;
+}
+
+.navbar-item__link:hover {
+	color: #00ffa6
+}

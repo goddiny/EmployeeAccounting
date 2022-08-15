@@ -1,0 +1,17 @@
+.Header {
+	background-color: #2F403A;
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 35px 60px;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	color: white;
+	font-weight: 500;
+	font-size: 40px;
+}
