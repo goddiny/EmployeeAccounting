@@ -1,0 +1,8 @@
+.description {
+	padding: 15px;
+	/* border: 1px solid red; */
+}
+
+.description b {
+	font-weight: 600;
+}

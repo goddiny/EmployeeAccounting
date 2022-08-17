@@ -1,69 +1,40 @@
 import "./EmployeesItem.css";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import arrowIcon from "../../assets/arrow.svg";
-import editIcon from "../../assets/edit.svg";
-import deleteIcon from "../../assets/delete.svg";
+import editSvg from "../../assets/edit.svg";
+import errorPng from "../../assets/error.png";
+import ItemDropdown from "./ItemDropdown";
+import ItemDescription from "./ItemDescription"
 
 const EmployeesItem = (props) => {
-  const month = props.birthdate.toLocaleString("en-US", { month: "2-digit" });
-  const day = props.birthdate.toLocaleString("en-US", { day: "2-digit" });
-  const year = props.birthdate.getFullYear();
-
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
-
   return (
     <div className="employees-item">
-      <div
-        className="employees-item__title"
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-      >
-        <img src={props.photo} alt={"Loading..."} />
+      <div className="employees-item__title">
+	  <img src={props.photo === '' ? errorPng : props.photo} alt=''/>
         <h3>
           {props.name}
           <br />
           {props.surname}
         </h3>
-        <CSSTransition
-          in={isHovering}
-          classNames="popup"
-          timeout={300}
-          unmountOnExit
-        >
-          <div className="employees-item__menu">
-            <button className="btn promote">
-              <img src={arrowIcon} alt="up" />
-            </button>
-            <button className="btn demote">
-              <img src={arrowIcon} alt="down" />
-            </button>
-            <button className="btn edit">
-              <img src={editIcon} alt="down" />
-            </button>
-            <button className="btn delete">
-              <img src={deleteIcon} alt="down" />
-            </button>
-          </div>
-        </CSSTransition>
       </div>
-      <div className="employees-item__description">
-        <p>
-          <b>Date of birth:</b> {day}.{month}.{year}
-        </p>
-        <p>
-          <b>Post:</b> {props.post}
-        </p>
-        {props.specific !== "" ? <p>Specific: {props.specific}</p> : ""}
-      </div>
+      <button className="employees-item__btn edit">
+        <img src={editSvg} alt=''/>
+      </button>
+
+      {/* <CSSTransition
+        //   in={}
+        classNames="popup"
+        timeout={300}
+        unmountOnExit
+      > */}
+      {/* <ItemDropdown /> */}
+      {/* </CSSTransition> */}
+
+      <ItemDescription
+        birthdate={props.birthdate}
+        post={props.post}
+        specific={props.specific}
+      />
     </div>
   );
 };

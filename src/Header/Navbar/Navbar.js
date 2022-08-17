@@ -1,7 +1,6 @@
 import "./Navbar.css";
 
 const Navbar = (props) => {
-  console.log(props.items[0].link);
   return (
     <ul className="navbar__list">
       {props.items.map((item) => (

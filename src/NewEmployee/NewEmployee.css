@@ -1,0 +1,35 @@
+.new-employee{
+	background-color: rgb(255, 255, 255);
+	height: 100vh;
+	width: 600px;
+	margin: 0 auto;
+	position: absolute;
+	z-index: 1;
+	border-radius: 0 45px 45px 0;
+	box-shadow: 0px 0px 50px 3px rgba(0, 0, 0, 0.418);
+}
+
+.new-employee.disabled {
+	width: 0;
+}
+
+.new-employee__btn{
+	position: absolute;
+	top: 140px;
+	right: -110px;
+	height: 80px;
+	width: 80px;
+	border: none;
+	display: flex;
+	align-items: center;
+	background-color: #2F403A;
+	border: 1px solid #00ffa6;
+	border-radius: 40px 40px 40px 0;
+	box-shadow: 0px 0px 8px 2px #00ffa6;
+}
+
+.new-employee__btn img{
+	margin: 0 auto;
+}
+
+
